@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Process Scheduling</title>
+  <link rel="shortcut icon" href="FAVICON1.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="ProcessScMain.css">
+</head>
+
+<body>
+  <div class="nav">
+    <nav>
+      <div class="img">
+
+        <img id="logo" src="Somaiya.png" alt="">
+
+      </div>
+      <div class="row">
+
+        <div class="icons">
+          <button type="button" name="button"> <a href="https://www.somaiya.edu.in/en" target="_blank">
+              <i class="bi bi-globe"></i> somaiya.edu
+            </a></button>
+          <a href="https://www.facebook.com/kjsieitofficial" target="_blank">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://twitter.com/kjsieit1" target="_blank">
+            <i class="bi bi-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/kjsieit_22/" target="_blank">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/kjsieitofficial" target="_blank">
+            <i class="bi bi-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGGuSH8KhlwSwAAAYLQ0-lI197THvyK68qNQUCy_45bItZlyVxB3zJIOqkcWsZbXs1Fbm5WsDzldL7D_aRcaijw5KvMXS4IdirAPV3v2BqILFUp5pcJxb0qpO5rUYdLIvVI5aE=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fkjsieit"
+            target="_blank">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <img id="trust" src="Trust.png" alt="">
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- Virtual Lab -->
+  <br>
+  <div class="divide">
+  </div>
+
+
+  <nav class="menubar">
+
+    <ul>
+      <li><a href="../index.html"><i class="bi bi-house"></i> Home</a></li>
+      <li><a href="#"><i class="bi bi-card-list"></i> Experiments</a>
+        <div class="submenu1">
+          <ul>
+            <li class="hoverme" style="background-color: #EDEDED;"><a
+                href="../Process Scheduling/ProcessScheduling.html">Process
+                Scheduling <i class="bi bi-caret-right-fill"></i> </a>
+              <div class="submenu2">
+                <ul>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../ProcessSched/Expt1/FCFS.html">Experiment No 1 : First Come First Serve</a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../ProcessSched/Expt2/sjf.html">Experiment No 2 : Shortest Job First</a></li>
+                  </div>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../ProcessSched/Expt3/Round Robin Scheduling.html">Experiment No 3 : Round Robin</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../ProcessSched/Expt4/PreemptivePriorityScheduling.html">Experiment No 4 : Preemptive
+                        Priority</a></li>
+                  </div>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../ProcessSched/Expt5/Non-preemptivePriorityScheduling.html">Experiment No 5 :
+                        Non-Preemptive Priority</a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../ProcessSched/Expt6/SRTF.html">Experiment No 6 : Shortest Remaining Time First </a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </li>
+            <li><a href="../BankersAlgoMain/BankersAlgoMain.html">Banker's Algorithm</a></li>
+            <li class="hoverme" style="background-color: #EDEDED;"><a href="../Disk Scheduling/DiskScheduling.html">Disk
+                Scheduling
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-caret-right-fill"></i> </a>
+              <div class="submenu2">
+                <ul>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../DiskSched/Expt1/FCFS.html">Experiment No 1 : First Come First Serve</a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../DiskSched/Expt2/SSTF.html">Experiment No 2 : Shortest Seek Time First</a></li>
+                  </div>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../DiskSched/Expt3/SCAN.html">Experiment No 3 : SCAN</a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../DiskSched/Expt4/C-SCAN.html">Experiment No 4 : CSCAN </a></li>
+                  </div>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../DiskSched/Expt5/LOOK.html">Experiment No 5 : LOOK </a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../DiskSched/Expt6/C-LOOK.html">Experiment No 6 : CLOOK </a></li>
+                  </div>
+
+                </ul>
+              </div>
+            </li>
+            <li class="hoverme"><a href="../Process Synchronization/ProcessSync.html">Process Synchronization<i
+                  class="bi bi-caret-right-fill"></i> </a>
+              <div class="submenu3">
+                <ul>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../ProcessSync/Expt1CountingSemaphores/CountingSemaphr.html">Experiment No 1 : Counting
+                        Semaphores</a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../ProcessSync/Expt2BinarySemaphores/BinarySemaphr.html">Experiment No 2 : Binary
+                        Semaphores</a></li>
+                  </div>
+
+
+                </ul>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </li>
+
+      <li><a href=""><i class="bi bi-people"></i> Discussion Forum</a></li>
+      <li><a href="../About Us/AboutUs.html"><i class="bi bi-info-circle"></i> About Us</a></li>
+      <li><a href="../Feedback/Feedback.html" target="_blank"><i class="bi bi-chat-left-text"></i> Feedback</a></li>
+      <li><a href="../../logout.php"><i class="bi bi-box-arrow-in-right"></i> Logout</a></li>
+    </ul>
+
+  </nav>
+  <div class="divide1">
+  </div>
+  <br>
+  <br>
+  <div >
+    <div class="Content">
+
+      <h3><u class="theory">Process Scheduling</u></h3>
+      <br>
+      <h4> <u class="theory1"><i class="bi bi-caret-right-square-fill"></i> What is a Process? </u></h4>
+      <h5 style="line-height: 1.6 ;text-align: justify;">
+        In computing, a process is the instance of a computer
+        program that is being executed by one or many threads.
+        It contains the program code and its activity.
+        Depending on the operating system (OS),
+        a process may be made up of multiple threads of execution
+        that execute instructions concurrently.
+      </h5>
+      <br>
+      <h4> <u class="theory1"> <i class="bi bi-caret-right-square-fill"></i> How is Process Memory used for efficient
+          operation?</u></h4>
+      <h5 style="line-height: 1.6 ;text-align: justify;">
+        The process memory is divided into four sections for efficient operation:
+        <br>
+        • The text category is composed of integrated program code, which is read from fixed storage when the program is
+        launched.
+        <br>
+        • The data class is made up of global and static variables, distributed and executed before the main action.
+        <br>
+        • Heap is used for flexible, or dynamic memory allocation and is managed by calls to new, delete, malloc, free,
+        etc.
+        <br>
+        • The stack is used for local variables. The space in the stack is reserved for local variables when it is
+        announced.
+        <br>
+      </h5>
+      <br>
+      <h4> <u class="theory1"> <i class="bi bi-caret-right-square-fill"></i> What is Process Scheduling?</u></h4>
+
+      <h5 style="line-height: 1.6 ;text-align: justify;">Process Scheduling is the process of the process manager
+        handling the removal of an active process from the CPU and
+        selecting another process based on a specific strategy.
+        <br>
+        Process Scheduling is an integral part of Multi-programming applications.
+        Such operating systems allow more than one process to be loaded into
+        usable memory at a time and the loaded shared CPU process uses repetition time.
+        <br>
+        <br>
+        There are three types of process schedulers:
+        <br>
+
+        • Long term or Job Scheduler
+        <br>
+        • Short term or CPU Scheduler
+        <br>
+        • Medium-term Scheduler
+      </h5>
+      <br>
+      <h4> <u class="theory1"> <i class="bi bi-caret-right-square-fill"></i>Objectives of Process Scheduling
+          Algorithm</u></h4>
+      <h5 style="line-height: 1.6; text-align: justify;">
+        • Utilization of CPU at maximum level. Keep CPU as busy as possible.
+        <br>
+        • Allocation of CPU should be fair.
+        <br>
+        • Throughput should be Maximum. i.e. Number of processes that complete their execution per time unit should be
+        maximized.
+        <br>
+        • Throughput should be Maximum. i.e. Number of processes that complete their execution per time unit should be
+        maximized.
+        <br>
+        • Minimum turnaround time, i.e. time taken by a process to finish execution should be the least.
+        <br>
+        • There should be a minimum waiting time and the process should not starve in the ready queue.
+        <br>
+        • Minimum response time. It means that the time when a process produces the first response should be as less as
+        possible.
+      </h5>
+      <br>
+      <h4> <u class="theory1"> <i class="bi bi-caret-right-square-fill"></i> What are the different terminologies to
+          take care of in any CPU Scheduling algorithm?</u></h4>
+      <h5 style="line-height: 1.6 ;text-align: justify;">
+        • Arrival Time: Time at which the process arrives in the ready queue.
+        <br>
+        • Completion Time: Time at which process completes its execution.
+        <br>
+        • Burst Time: Time required by a process for CPU execution.
+        <br>
+
+        • Turn Around Time: Time Difference between completion time and arrival time.
+
+        <h5> <em> <b>&nbsp;&nbsp;Turn Around Time = Completion Time - Arrival Time.</b></em></h5>
+
+        <h5>• Waiting Time(W.T): Time Difference between turn around time and burst time.</h5>
+        <h5><em> <b>&nbsp;&nbsp;Waiting Time = Turn Around Time - Burst Time.</b> </em></h5>
+
+      </h5>
+    </div>
+    <br>
+    <div class="PS">
+      <img src="Chart.jpg" class="responsive img2" alt="image" height="500px" width="500px">
+
+    </div>
+    <br>
+    <div>
+      <INPUT TYPE="button" class="btn btn-primary" style="background-color: #9b2928 ; margin-left: 2em ;"
+        VALUE="&nbsp;&nbsp; Back &nbsp;&nbsp;" onClick="history.go(-1);">
+      </div>
+        <br>
+        <footer>
+          <div class="footer-content">
+        <h6>Department Of Computer Engineering</h6>
+        <h6 style="font-size: 15px;"><i class="bi bi-c-circle"></i> 2022-23</h6>
+       <br>
+        <h6>Guided by : Prof. Jyoti Wadmare</h6>
+      
+        <h6>Developed by : Dakshita Kolte, Kapil Bhatia, Palak Desai, Kartikeya Dangat</h6>
+      </div>
+      </footer>
+      <!-- Back to top button -->
+      <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top"><i class="bi bi-arrow-up"></i>
+      </button>
+      
+      <style>
+        #btn-back-to-top {
+          border-radius: 50%;
+          color: #ffffff;
+          background-color: #CC3835;
+          height: 50px;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          display: none;
+        }
+      </style>
+      <script>
+        //Get the button
+        let mybutton = document.getElementById("btn-back-to-top");
+      
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+          scrollFunction();
+        };
+      
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+          ) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        mybutton.addEventListener("click", backToTop);
+      
+        function backToTop() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
+
+
+
+  </div>
+  </div>
+</body>
+
+</html>

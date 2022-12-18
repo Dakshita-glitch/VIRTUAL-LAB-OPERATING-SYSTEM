@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Disk Scheduling</title>
+  <link rel="shortcut icon" href="FAVICON1.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="DiskScMain.css">
+</head>
+
+<body>
+  <div class="nav">
+    <nav>
+      <div class="img">
+
+        <img id="logo" src="Somaiya.png" alt="">
+
+      </div>
+      <div class="row">
+
+        <div class="icons">
+          <button type="button" name="button"> <a href="https://www.somaiya.edu.in/en" target="_blank">
+              <i class="bi bi-globe"></i> somaiya.edu
+            </a></button>
+          <a href="https://www.facebook.com/kjsieitofficial" target="_blank">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://twitter.com/kjsieit1" target="_blank">
+            <i class="bi bi-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/kjsieit_22/" target="_blank">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/kjsieitofficial" target="_blank">
+            <i class="bi bi-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGGuSH8KhlwSwAAAYLQ0-lI197THvyK68qNQUCy_45bItZlyVxB3zJIOqkcWsZbXs1Fbm5WsDzldL7D_aRcaijw5KvMXS4IdirAPV3v2BqILFUp5pcJxb0qpO5rUYdLIvVI5aE=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fkjsieit"
+            target="_blank">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <img id="trust" src="Trust.png" alt="">
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- Virtual Lab -->
+  <br>
+  <div class="divide">
+  </div>
+
+
+  <nav class="menubar">
+
+    <ul>
+      <li><a href="../index.html"><i class="bi bi-house"></i> Home</a></li>
+      <li><a href="#"><i class="bi bi-card-list"></i> Experiments</a>
+        <div class="submenu1">
+          <ul>
+            <li class="hoverme" style="background-color: #EDEDED;"><a href="../Process Scheduling/ProcessScheduling.html">Process
+                Scheduling <i class="bi bi-caret-right-fill"></i> </a>
+              <div class="submenu2">
+                <ul>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../ProcessSched/Expt1/FCFS.html">Experiment No 1 : First Come First Serve</a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../ProcessSched/Expt2/sjf.html">Experiment No 2 : Shortest Job First</a></li>
+                  </div>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../ProcessSched/Expt3/Round Robin Scheduling.html">Experiment No 3 : Round Robin</a></li> 
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../ProcessSched/Expt4/PreemptivePriorityScheduling.html">Experiment No 4 : Preemptive Priority</a></li>
+                  </div>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../ProcessSched/Expt5/Non-preemptivePriorityScheduling.html">Experiment No 5 : Non-Preemptive Priority</a></li>  
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../ProcessSched/Expt6/SRTF.html">Experiment No 6 : Shortest Remaining Time First </a></li> 
+                  </div>
+                </ul>
+              </div>
+            </li>
+            <li><a href="../BankersAlgoMain/BankersAlgoMain.html">Banker's Algorithm</a></li>
+            <li class="hoverme" style="background-color: #EDEDED;"><a href="../Disk Scheduling/DiskScheduling.html">Disk Scheduling
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-caret-right-fill"></i> </a>
+              <div class="submenu2">
+                <ul>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../DiskSched/Expt1/FCFS.html">Experiment No 1 : First Come First Serve</a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../DiskSched/Expt2/SSTF.html">Experiment No 2 : Shortest Seek Time First</a></li>
+                  </div>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../DiskSched/Expt3/SCAN.html">Experiment No 3 : SCAN</a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../DiskSched/Expt4/C-SCAN.html">Experiment No 4 : CSCAN </a></li>
+                  </div>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../DiskSched/Expt5/LOOK.html">Experiment No 5 : LOOK </a></li>
+                  </div>
+                  <div style="background-color: #c1c1c1;">
+                    <li><a href="../DiskSched/Expt6/C-LOOK.html">Experiment No 6 : CLOOK </a></li>
+                  </div>
+                
+                </ul>
+              </div>
+            </li>
+            <li class="hoverme"><a href="../Process Synchronization/ProcessSync.html">Process Synchronization<i
+                  class="bi bi-caret-right-fill"></i> </a>
+              <div class="submenu3">
+                <ul>
+                  <div style="background-color: #D8D9CF;">
+                    <li><a href="../ProcessSync/Expt1CountingSemaphores/CountingSemaphr.html">Experiment No 1 : Counting Semaphores</a></li>
+                  </div>
+                  <div  style="background-color: #c1c1c1;">
+                    <li><a href="../ProcessSync/Expt2BinarySemaphores/BinarySemaphr.html">Experiment No 2 : Binary Semaphores</a></li>
+                 </div>
+                 
+                  
+                </ul>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </li>
+
+      <li><a href=""><i class="bi bi-people"></i> Discussion Forum</a></li>
+      <li><a href="../About Us/AboutUs.html"><i class="bi bi-info-circle"></i> About Us</a></li>
+      <li><a href="../Feedback/Feedback.html" target="_blank"><i class="bi bi-chat-left-text"></i> Feedback</a></li>
+      <li><a href="../../logout.php"><i class="bi bi-box-arrow-in-right"></i> Logout</a></li>
+    </ul>
+
+  </nav>
+  <div class="divide1">
+  </div>
+  <br>
+  <br>
+  <div class="Theory">
+    <div class="Content">
+      
+      <h3><u class="theory">Disk Scheduling</u></h3>
+      <br>
+      <h4> <u class="theory1"style="text-align: justify;"><i class="bi bi-caret-right-square-fill"></i> What is a Disk Scehduling? </u></h4>
+      <h5 style="text-align: justify;">
+        <br>
+        Disk scheduling is done by operating systems to schedule I/O requests arriving for the disk. Disk scheduling is
+        also known as I/O scheduling.
+        <br>
+        <br>
+        Disk scheduling is important because:
+        <br>
+        <br>
+        • Multiple I/O requests may arrive by different processes and only one I/O request can be served at a time by
+        the disk controller.
+        <br>
+        &nbsp;&nbsp;Thus other I/O requests need to wait in the waiting queue and need to be scheduled.
+        <br>
+        <br>
+        • Two or more request may be far from each other so can result in greater disk arm movement.
+        <br>
+        <br>
+        • Hard drives are one of the slowest parts of the computer system and thus need to be accessed in an efficient
+        manner.
+      </h5>
+      <br>
+      <h4> <u class="theory1"> <i class="bi bi-caret-right-square-fill"></i> What are the different terminologies used
+          in Disk Scheduling algorithm?</u></h4>
+      <h5 style="text-align: justify;">
+        <br>
+        There are many Disk Scheduling Algorithms but before discussing them let’s have a quick look at some of the
+        important terms:
+      </h5>
+      <br><br>
+      <!-- <h5>• Seek Time:</h5>
+      <h5 style="text-align: justify;">&nbsp;&nbsp;Seek time is the time taken to locate the disk arm to a specified track where the data is to be read or write. <br>&nbsp; So the disk scheduling algorithm that gives minimum average seek time is better.
+      </h5> -->
+      <h5 style="text-align: justify;">
+        • Seek Time:<br><br>&nbsp;&nbsp;Seek time is the time taken to locate the disk arm to a specified track where the data is to be read or write. <br>&nbsp; So the disk scheduling algorithm that gives minimum average seek time is better.
+        <br>
+        <br>
+        • Rotational Latency:<br><br>&nbsp;&nbsp;Rotational Latency is the time taken by the desired sector of disk to rotate into a
+        position so that it can access the read/write heads.<br>&nbsp;&nbsp;So the disk scheduling algorithm that gives minimum
+        rotational latency is better.
+        <br>
+        <br>
+        
+        • Transfer Time:<br><br>&nbsp;&nbsp;Transfer time is the time to transfer the data. It depends on the rotating speed of the
+        disk and number of bytes to be transferred.
+        <br>
+        <br>
+       
+        • Disk Access Time:
+        <br> <br>
+        &nbsp;&nbsp;Disk Access Time = Seek Time + Rotational Latency + Transfer Time
+        <br>
+        <br>
+        
+        • Disk Response Time:<br><br>&nbsp; Response Time is the average of time spent by a request waiting to perform its I/O
+        operation.<br>&nbsp; Average Response time is the response time of the all requests.<br>&nbsp; Variance Response Time is measure of
+        how individual request are serviced with respect to average response time.<br>&nbsp; So the disk scheduling algorithm that
+        gives minimum variance response time is better.
+      </h5>
+      <br><br><br>
+    </div>
+    <br>
+    <div class="DS">
+      <img src="DS FLOW.jpg" alt="image" height="600px" width="580px">
+
+    </div>
+    <div>
+    <INPUT TYPE="button" class="btn btn-primary" style="background-color: #9B2928; margin-left:2em" VALUE="&nbsp;&nbsp; Back &nbsp;&nbsp;" onClick="history.go(-1);">
+    </div>
+      <br>
+      <footer>
+        <div class="footer-content">
+      <h6>Department Of Computer Engineering</h6>
+      <h6 style="font-size: 15px;"><i class="bi bi-c-circle"></i> 2022-23</h6>
+     <br>
+      <h6>Guided by : Prof. Jyoti Wadmare</h6>
+    
+      <h6>Developed by : Dakshita Kolte, Kapil Bhatia, Palak Desai, Kartikeya Dangat</h6>
+    </div>
+    </footer>
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top"><i class="bi bi-arrow-up"></i>
+    </button>
+    
+    <style>
+      #btn-back-to-top {
+        border-radius: 50%;
+        color: #ffffff;
+        background-color: #CC3835;
+        height: 50px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+      }
+    </style>
+    <script>
+      //Get the button
+      let mybutton = document.getElementById("btn-back-to-top");
+    
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+    
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      mybutton.addEventListener("click", backToTop);
+    
+      function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
+
+  </div>
