@@ -279,7 +279,7 @@ footer .total_que span p:first-child{
 } 
 
 footer button{
-    background-color: white !important;
+    /* background-color: white !important; */
     height: 40px;
     padding: 0 13px;
     font-size: 18px;
