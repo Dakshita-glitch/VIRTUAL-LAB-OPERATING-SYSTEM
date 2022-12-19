@@ -289,7 +289,7 @@ footer button{
     outline: none;
     color: #fff;
     border-radius: 5px;
-    background: #9b2928;
+    background: #9b2928 !important;
     border: 1px solid #9b2928;
     line-height: 10px;
     opacity: 0;
