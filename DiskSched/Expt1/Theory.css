@@ -15,9 +15,10 @@ nav {
 }
 
 #logo {
-  height: 5rem;
-  width:28.125rem;
+  height: 6rem;
+  width: 100%;
 }
+
 
 .row {
   display: flex;

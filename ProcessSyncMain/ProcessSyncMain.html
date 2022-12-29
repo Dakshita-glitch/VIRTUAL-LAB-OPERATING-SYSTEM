@@ -1,484 +1,424 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Process Synchronization</title>
-    <link rel="shortcut icon" href="FAVICON1.png" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
-    />
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    />
-    <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="ProcessSyncMain.css" />
-  </head>
 
-  <body>
-    <div class="nav">
-      <nav>
-        <div class="img">
-          <img id="logo" src="Somaiya.png" alt="" />
+<head>
+  <meta charset="utf-8" />
+  <title>Process Synchronization</title>
+  <link rel="shortcut icon" href="FAVICON1.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@300;400&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="ProcessSyncMain.css" />
+</head>
+
+<body>
+  <div class="nav">
+    <nav>
+      <div class="img">
+        <img id="logo" src="Somaiya.png" alt="" />
+      </div>
+      <div class="row">
+        <div class="icons">
+          <button type="button" name="button">
+            <a href="https://www.somaiya.edu.in/en" target="_blank">
+              <i class="bi bi-globe"></i> somaiya.edu
+            </a>
+          </button>
+          <a href="https://www.facebook.com/kjsieitofficial" target="_blank">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://twitter.com/kjsieit1" target="_blank">
+            <i class="bi bi-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/kjsieit_22/" target="_blank">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/kjsieitofficial" target="_blank">
+            <i class="bi bi-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGGuSH8KhlwSwAAAYLQ0-lI197THvyK68qNQUCy_45bItZlyVxB3zJIOqkcWsZbXs1Fbm5WsDzldL7D_aRcaijw5KvMXS4IdirAPV3v2BqILFUp5pcJxb0qpO5rUYdLIvVI5aE=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fkjsieit"
+            target="_blank">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <img id="trust" src="Trust.png" alt="" />
         </div>
-        <div class="row">
-          <div class="icons">
-            <button type="button" name="button">
-              <a href="https://www.somaiya.edu.in/en" target="_blank">
-                <i class="bi bi-globe"></i> somaiya.edu
-              </a>
-            </button>
-            <a href="https://www.facebook.com/kjsieitofficial" target="_blank">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="https://twitter.com/kjsieit1" target="_blank">
-              <i class="bi bi-twitter"></i>
-            </a>
-            <a href="https://www.instagram.com/kjsieit_22/" target="_blank">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com/kjsieitofficial" target="_blank">
-              <i class="bi bi-youtube"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQGGuSH8KhlwSwAAAYLQ0-lI197THvyK68qNQUCy_45bItZlyVxB3zJIOqkcWsZbXs1Fbm5WsDzldL7D_aRcaijw5KvMXS4IdirAPV3v2BqILFUp5pcJxb0qpO5rUYdLIvVI5aE=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fkjsieit"
-              target="_blank"
-            >
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <img id="trust" src="Trust.png" alt="" />
-          </div>
-        </div>
-      </nav>
-    </div>
-    <!-- Virtual Lab -->
-    <br />
-    <div class="divide"></div>
-
-    <nav class="menubar">
-      <ul>
-        <li>
-          <a href="../index.html"><i class="bi bi-house"></i> Home</a>
-        </li>
-        <li>
-          <a href="#"><i class="bi bi-card-list"></i> Experiments</a>
-          <div class="submenu1">
-            <ul>
-              <li class="hoverme" style="background-color: #ededed">
-                <a href="../Process Scheduling/ProcessScheduling.html" target="_blank"
-                  >Process Scheduling <i class="bi bi-caret-right-fill"></i>
-                </a>
-                <div class="submenu2">
-                  <ul>
-                    <div style="background-color: #d8d9cf">
-                      <li>
-                        <a href="../ProcessSched/Expt1/FCFS.html" target="_blank"
-                          >Experiment No 1 : First Come First Serve</a
-                        >
-                      </li>
-                    </div>
-                    <div style="background-color: #c1c1c1">
-                      <li>
-                        <a href="../ProcessSched/Expt2/sjf.html" target="_blank"
-                          >Experiment No 2 : Shortest Job First</a
-                        >
-                      </li>
-                    </div>
-                    <div style="background-color: #d8d9cf">
-                      <li>
-                        <a
-                          href="../ProcessSched/Expt3/Round Robin Scheduling.html" target="_blank"
-                          >Experiment No 3 : Round Robin</a
-                        >
-                      </li>
-                    </div>
-                    <div style="background-color: #c1c1c1">
-                      <li>
-                        <a
-                          href="../ProcessSched/Expt4/PreemptivePriorityScheduling.html" target="_blank"
-                          >Experiment No 4 : Preemptive Priority</a
-                        >
-                      </li>
-                    </div>
-                    <div style="background-color: #d8d9cf">
-                      <li>
-                        <a
-                          href="../ProcessSched/Expt5/Non-preemptivePriorityScheduling.html" target="_blank"
-                          >Experiment No 5 : Non-Preemptive Priority</a
-                        >
-                      </li>
-                    </div>
-                    <div style="background-color: #c1c1c1">
-                      <li>
-                        <a href="../ProcessSched/Expt6/SRTF.html" target="_blank"
-                          >Experiment No 6 : Shortest Remaining Time First
-                        </a>
-                      </li>
-                    </div>
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <a href="../BankersAlgo/BankersAlgo.html" target="_blank"
-                  >Banker's Algorithm</a
-                >
-              </li>
-              <li class="hoverme" style="background-color: #ededed">
-                <a href="../Disk Scheduling/DiskScheduling.html" target="_blank"
-                  >Disk Scheduling &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
-                    class="bi bi-caret-right-fill"
-                  ></i>
-                </a>
-                <div class="submenu2">
-                  <ul>
-                    <div style="background-color: #d8d9cf">
-                      <li>
-                        <a href="../DiskSched/Expt1/FCFS.html" target="_blank"
-                          >Experiment No 1 : First Come First Serve</a
-                        >
-                      </li>
-                    </div>
-                    <div style="background-color: #c1c1c1">
-                      <li>
-                        <a href="../DiskSched/Expt2/SSTF.html" target="_blank"
-                          >Experiment No 2 : Shortest Seek Time First</a
-                        >
-                      </li>
-                    </div>
-                    <div style="background-color: #d8d9cf">
-                      <li>
-                        <a href="../DiskSched/Expt3/SCAN.html" target="_blank"
-                          >Experiment No 3 : SCAN</a
-                        >
-                      </li>
-                    </div>
-                    <div style="background-color: #c1c1c1">
-                      <li>
-                        <a href="../DiskSched/Expt4/C-SCAN.html" target="_blank"
-                          >Experiment No 4 : CSCAN
-                        </a>
-                      </li>
-                    </div>
-                    <div style="background-color: #d8d9cf">
-                      <li>
-                        <a href="../DiskSched/Expt5/LOOK.html" target="_blank"
-                          >Experiment No 5 : LOOK
-                        </a>
-                      </li>
-                    </div>
-                    <div style="background-color: #c1c1c1">
-                      <li>
-                        <a href="../DiskSched/Expt6/C-LOOK.html" target="_blank"
-                          >Experiment No 6 : CLOOK
-                        </a>
-                      </li>
-                    </div>
-                  </ul>
-                </div>
-              </li>
-              <li class="hoverme">
-                <a href="../Process Synchronization/ProcessSync.html" target="_blank"
-                  >Process Synchronization<i class="bi bi-caret-right-fill"></i>
-                </a>
-                <div class="submenu3">
-                  <ul>
-                    <div style="background-color: #d8d9cf">
-                      <li>
-                        <a
-                          href="../ProcessSync/Expt1CountingSemaphores/CountingSemaphr.html" target="_blank"
-                          >Experiment No 1 : Counting Semaphores</a
-                        >
-                      </li>
-                    </div>
-                    <div style="background-color: #c1c1c1">
-                      <li>
-                        <a
-                          href="../ProcessSync/Expt2BinarySemaphores/BinarySemaphr.html" target="_blank"
-                          >Experiment No 2 : Binary Semaphores</a
-                        >
-                      </li>
-                    </div>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
-
-        <li>
-          <a href=""><i class="bi bi-people"></i> Discussion Forum</a>
-        </li>
-        <li>
-          <a href="../About Us/AboutUs.html"
-            ><i class="bi bi-info-circle"></i> About Us</a
-          >
-        </li>
-        <li>
-          <a href="../Feedback/Feedback.html" target="_blank"
-            ><i class="bi bi-chat-left-text"></i> Feedback</a
-          >
-        </li>
-        <li>
-          <a href="../../logout.php"
-            ><i class="bi bi-box-arrow-in-right"></i> Logout</a
-          >
-        </li>
-      </ul>
+      </div>
     </nav>
-    <div class="divide1"></div>
-    <br />
-    <br />
-    <div class="Theory">
-      <div class="Content">
-        <!-- <div class="container">
+  </div>
+  <!-- Virtual Lab -->
+  <br />
+  <div class="divide"></div>
+
+  <nav class="menubar">
+    <ul>
+      <li>
+        <a href="../index.html"><i class="bi bi-house"></i> Home</a>
+      </li>
+      <li>
+        <a href="#"><i class="bi bi-card-list"></i> Experiments</a>
+        <div class="submenu1">
+          <ul>
+            <li class="hoverme" style="background-color: #ededed">
+              <a href="../Process Scheduling/ProcessScheduling.html" target="_blank">Process Scheduling <i
+                  class="bi bi-caret-right-fill"></i>
+              </a>
+              <div class="submenu2">
+                <ul>
+                  <div style="background-color: #d8d9cf">
+                    <li>
+                      <a href="../ProcessSched/Expt1/FCFS.html" target="_blank">Experiment No 1 : First Come First
+                        Serve</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #c1c1c1">
+                    <li>
+                      <a href="../ProcessSched/Expt2/sjf.html" target="_blank">Experiment No 2 : Shortest Job First</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #d8d9cf">
+                    <li>
+                      <a href="../ProcessSched/Expt3/Round Robin Scheduling.html" target="_blank">Experiment No 3 :
+                        Round Robin</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #c1c1c1">
+                    <li>
+                      <a href="../ProcessSched/Expt4/PreemptivePriorityScheduling.html" target="_blank">Experiment No 4
+                        : Preemptive Priority</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #d8d9cf">
+                    <li>
+                      <a href="../ProcessSched/Expt5/Non-preemptivePriorityScheduling.html" target="_blank">Experiment
+                        No 5 : Non-Preemptive Priority</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #c1c1c1">
+                    <li>
+                      <a href="../ProcessSched/Expt6/SRTF.html" target="_blank">Experiment No 6 : Shortest Remaining
+                        Time First
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="../BankersAlgo/BankersAlgo.html" target="_blank">Banker's Algorithm</a>
+            </li>
+            <li class="hoverme" style="background-color: #ededed">
+              <a href="../Disk Scheduling/DiskScheduling.html" target="_blank">Disk Scheduling
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-caret-right-fill"></i>
+              </a>
+              <div class="submenu2">
+                <ul>
+                  <div style="background-color: #d8d9cf">
+                    <li>
+                      <a href="../DiskSched/Expt1/FCFS.html" target="_blank">Experiment No 1 : First Come First
+                        Serve</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #c1c1c1">
+                    <li>
+                      <a href="../DiskSched/Expt2/SSTF.html" target="_blank">Experiment No 2 : Shortest Seek Time
+                        First</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #d8d9cf">
+                    <li>
+                      <a href="../DiskSched/Expt3/SCAN.html" target="_blank">Experiment No 3 : SCAN</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #c1c1c1">
+                    <li>
+                      <a href="../DiskSched/Expt4/C-SCAN.html" target="_blank">Experiment No 4 : CSCAN
+                      </a>
+                    </li>
+                  </div>
+                  <div style="background-color: #d8d9cf">
+                    <li>
+                      <a href="../DiskSched/Expt5/LOOK.html" target="_blank">Experiment No 5 : LOOK
+                      </a>
+                    </li>
+                  </div>
+                  <div style="background-color: #c1c1c1">
+                    <li>
+                      <a href="../DiskSched/Expt6/C-LOOK.html" target="_blank">Experiment No 6 : CLOOK
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </li>
+            <li class="hoverme">
+              <a href="../Process Synchronization/ProcessSync.html" target="_blank">Process Synchronization<i
+                  class="bi bi-caret-right-fill"></i>
+              </a>
+              <div class="submenu3">
+                <ul>
+                  <div style="background-color: #d8d9cf">
+                    <li>
+                      <a href="../ProcessSync/Expt1CountingSemaphores/CountingSemaphr.html" target="_blank">Experiment
+                        No 1 : Counting Semaphores</a>
+                    </li>
+                  </div>
+                  <div style="background-color: #c1c1c1">
+                    <li>
+                      <a href="../ProcessSync/Expt2BinarySemaphores/BinarySemaphr.html" target="_blank">Experiment No 2
+                        : Binary Semaphores</a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li>
+        <a href="../../forum/index.php"><i class="bi bi-people"></i> Discussion Forum</a>
+      </li>
+      <li>
+        <a href="../About Us/AboutUs.html"><i class="bi bi-info-circle"></i> About Us</a>
+      </li>
+      <li>
+        <a href="../../feedback/index.php" target="_blank"><i class="bi bi-chat-left-text"></i> Feedback</a>
+      </li>
+      <li>
+        <a href="../../logout.php"><i class="bi bi-box-arrow-in-right"></i> Logout</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="divide1"></div>
+  <br />
+  <br />
+  <div class="Theory">
+    <div class="Content">
+      <!-- <div class="container">
           <a href="../Process Synchronization/ProcessSync.html" class="button">Back</a>
         <br>
         </div> -->
-        <h3><u class="theory">Process Synchronization</u></h3>
+      <h3><u class="theory">Process Synchronization</u></h3>
+      <br />
+      <h4>
+        <u class="theory1"><i class="bi bi-caret-right-square-fill"></i> What is a Process
+          Synchronization?
+        </u>
+      </h4>
+      <h5 style="line-height: 1.6; text-align: justify">
         <br />
-        <h4>
-          <u class="theory1"
-            ><i class="bi bi-caret-right-square-fill"></i> What is a Process
-            Synchronization?
-          </u>
-        </h4>
-        <h5 style="line-height: 1.6; text-align: justify">
-          <br />
-          Processes Synchronization is the way by which processes that share the
-          same memory space are managed in an operating system. It helps
-          maintain the consistency of data by using variables or hardware so
-          that only one process can make changes to the shared memory at a time.
-          <br />
-          <br />
-          <u>Example:</u>
-          <br />
-          <br />
-          Let us take a look at why exactly we need Process Synchronization. For
-          example, if a process1 is trying to read the data present in a memory
-          location while another process2 is trying to change the data present
-          at the same location, there is a high chance that the data read by the
-          process1 will be incorrect.
-          <br /><br />
-          <div class="pic">
-            <img
-              src="Semaphreg.png"
-              height="300px"
-              width="700px"
-              class="img"
-              alt="Ex"
-            />
-          </div>
-          <br />
-          <br />
-          <p>
-            Inconsistency of data can occur when various processes share a
-            common resource in a system which is why there is a need for process
-            synchronization in the operating system.
-          </p>
-          <br /><br />
-          On the basis of synchronization, processes are categorized as one of
-          the following two types:
-          <br />
-          <br />
-          1] <u>Independent Process:</u> The execution of one process does not
-          affect the execution of other processes.
-          <br />
-          <br />
-          2] <u>Cooperative Process:</u> A process that can affect or be
-          affected by other processes executing in the system.
-        </h5>
+        Processes Synchronization is the way by which processes that share the
+        same memory space are managed in an operating system. It helps
+        maintain the consistency of data by using variables or hardware so
+        that only one process can make changes to the shared memory at a time.
         <br />
-        <h4>
-          <u class="theory1">
-            <i class="bi bi-caret-right-square-fill"></i> Concepts in Process
-            Synchronization:
-          </u>
-        </h4>
-
+        <br />
+        <u>Example:</u>
+        <br />
+        <br />
+        Let us take a look at why exactly we need Process Synchronization. For
+        example, if a process1 is trying to read the data present in a memory
+        location while another process2 is trying to change the data present
+        at the same location, there is a high chance that the data read by the
+        process1 will be incorrect.
         <br /><br />
-        <h5 style="line-height: 1.6">• <u>Race Condition :</u></h5>
+        <div class="pic">
+          <img src="Semaphreg.png" height="300px" width="700px" class="img" alt="Ex" />
+        </div>
         <br />
+        <br />
+        <p>
+          Inconsistency of data can occur when various processes share a
+          common resource in a system which is why there is a need for process
+          synchronization in the operating system.
+        </p>
+        <br /><br />
+        On the basis of synchronization, processes are categorized as one of
+        the following two types:
+        <br />
+        <br />
+        1] <u>Independent Process:</u> The execution of one process does not
+        affect the execution of other processes.
+        <br />
+        <br />
+        2] <u>Cooperative Process:</u> A process that can affect or be
+        affected by other processes executing in the system.
+      </h5>
+      <br />
+      <h4>
+        <u class="theory1">
+          <i class="bi bi-caret-right-square-fill"></i> Concepts in Process
+          Synchronization:
+        </u>
+      </h4>
+
+      <br /><br />
+      <h5 style="line-height: 1.6">• <u>Race Condition :</u></h5>
+      <br />
+      <h5 style="line-height: 1.6; text-align: justify">
+        When more than one process is executing the same code or accessing the
+        same memory or any shared variable in that condition there is a
+        possibility that the output or the value of the shared variable is
+        wrong so for that all the processes doing the race to say that my
+        output is correct this condition known as a race condition.
+        <br />
+      </h5>
+      <h5 style="line-height: 1.6; text-align: justify">
+        <br />
+        • <u>Critical Section Problem : </u>
+        <br />
+        <br />
+        A critical section is a code segment that can be accessed by only one
+        process at a time. <br />
+        The critical section contains shared variables that need to be
+        synchronized to maintain the consistency of data variables.
+        <br />
+        So the critical section problem means designing a way for cooperative
+        processes to access shared resources without creating data
+        inconsistencies.
         <h5 style="line-height: 1.6; text-align: justify">
-          When more than one process is executing the same code or accessing the
-          same memory or any shared variable in that condition there is a
-          possibility that the output or the value of the shared variable is
-          wrong so for that all the processes doing the race to say that my
-          output is correct this condition known as a race condition.
           <br />
-        </h5>
-        <h5 style="line-height: 1.6; text-align: justify">
-          <br />
-          • <u>Critical Section Problem : </u>
+          Any solution to the critical section problem must satisfy three
+          requirements:
           <br />
           <br />
-          A critical section is a code segment that can be accessed by only one
-          process at a time. <br />
-          The critical section contains shared variables that need to be
-          synchronized to maintain the consistency of data variables.
+          • <u>Mutual Exclusion :</u>
           <br />
-          So the critical section problem means designing a way for cooperative
-          processes to access shared resources without creating data
-          inconsistencies.
-          <h5 style="line-height: 1.6; text-align: justify">
+          <br />
+          If a process is executing in its critical section, then no other
+          process is allowed to execute in the critical section.
+          <br />
+          <br />
+          • <u>Progress :</u> <br /><br />
+          If no process is executing in the critical section and other
+          processes are waiting outside the critical section, then only those
+          processes that are not executing in their remainder section can
+          participate in deciding which will enter in the critical section
+          next, and the selection cannot be postponed indefinitely.
+          <br />
+          <br />
+          • <u>Bounded Waiting :</u> <br /><br />
+          A bound must exist on the number of times that other processes are
+          allowed to enter their critical sections after a process has made a
+          request to enter its critical section and before that request is
+          granted.
+          <br /><br />
+          <h5 style="text-align: justify">
+            • <u>Peterson’s Solution : </u>
             <br />
-            Any solution to the critical section problem must satisfy three
-            requirements:
             <br />
+            Peterson’s Solution is a classical software-based solution to the
+            critical section problem.
             <br />
-            • <u>Mutual Exclusion :</u>
-            <br />
-            <br />
-            If a process is executing in its critical section, then no other
-            process is allowed to execute in the critical section.
-            <br />
-            <br />
-            • <u>Progress :</u> <br /><br />
-            If no process is executing in the critical section and other
-            processes are waiting outside the critical section, then only those
-            processes that are not executing in their remainder section can
-            participate in deciding which will enter in the critical section
-            next, and the selection cannot be postponed indefinitely.
-            <br />
-            <br />
-            • <u>Bounded Waiting :</u> <br /><br />
-            A bound must exist on the number of times that other processes are
-            allowed to enter their critical sections after a process has made a
-            request to enter its critical section and before that request is
-            granted.
+            <br />In Peterson’s solution, we have two shared variables:
             <br /><br />
-            <h5 style="text-align: justify">
-              • <u>Peterson’s Solution : </u>
+            1] <u>boolean flag[i]:</u> Initialized to FALSE, initially no one
+            is interested in entering the critical section
+            <br />
+            <br />
+            2] <u>int turn:</u> The process whose turn is to enter the
+            critical section. <br /><br />
+            <h5 style="line-height: 1.6; text-align: justify">
+              •<u> Semaphores :</u>
               <br />
               <br />
-              Peterson’s Solution is a classical software-based solution to the
-              critical section problem.
-              <br />
-              <br />In Peterson’s solution, we have two shared variables:
-              <br /><br />
-              1] <u>boolean flag[i]:</u> Initialized to FALSE, initially no one
-              is interested in entering the critical section
-              <br />
-              <br />
-              2] <u>int turn:</u> The process whose turn is to enter the
-              critical section. <br /><br />
-              <h5 style="line-height: 1.6; text-align: justify">
-                •<u> Semaphores :</u>
-                <br />
-                <br />
-                A semaphore is a signaling mechanism and a thread that is
-                waiting on a semaphore can be signaled by another thread. This
-                is different than a mutex as the mutex can be signaled only by
-                the thread that is called the wait function. A semaphore uses
-                two atomic operations, wait and signal for process
-                synchronization. A Semaphore is an integer variable, which can
-                be accessed only through two operations wait() and signal().
-                There are two types of semaphores: Binary Semaphores and
-                Counting Semaphores.
-              </h5>
-              <br /><br />
+              A semaphore is a signaling mechanism and a thread that is
+              waiting on a semaphore can be signaled by another thread. This
+              is different than a mutex as the mutex can be signaled only by
+              the thread that is called the wait function. A semaphore uses
+              two atomic operations, wait and signal for process
+              synchronization. A Semaphore is an integer variable, which can
+              be accessed only through two operations wait() and signal().
+              There are two types of semaphores: Binary Semaphores and
+              Counting Semaphores.
             </h5>
+            <br /><br />
           </h5>
         </h5>
-        <!-- <INPUT TYPE="button" class="return" VALUE="&nbsp;&nbsp; Back &nbsp;&nbsp;" onClick="history.go(-1);"> -->
-      </div>
-      <br />
-      <div>
-        <input
-          type="button"
-          class="btn btn-primary"
-          style="background-color: #9b2928; margin-left: 2em"
-          value="&nbsp;&nbsp; Back &nbsp;&nbsp;"
-          onClick="history.go(-1);"
-        />
-      </div>
-      <br />
-      <footer>
-        <div class="footer-content">
-          <h6>Department Of Computer Engineering</h6>
-          <h6 style="font-size: 15px">
-            <i class="bi bi-c-circle"></i> 2022-23
-          </h6>
-          <br />
-          <h6>Guided by : Prof. Jyoti Wadmare</h6>
-
-          <h6>
-            Developed by : Dakshita Kolte, Kapil Bhatia, Palak Desai, Kartikeya
-            Dangat
-          </h6>
-        </div>
-      </footer>
-      <!-- Back to top button -->
-      <button
-        type="button"
-        class="btn btn-danger btn-floating btn-lg"
-        id="btn-back-to-top"
-      >
-        <i class="bi bi-arrow-up"></i>
-      </button>
-
-      <style>
-        #btn-back-to-top {
-          z-index: 100;
-          border-radius: 50%;
-          color: #ffffff;
-          background-color: #cc3835;
-          height: 50px;
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          display: none;
-        }
-      </style>
-      <script>
-        //Get the button
-        let mybutton = document.getElementById("btn-back-to-top");
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-          scrollFunction();
-        };
-
-        function scrollFunction() {
-          if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-          ) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.addEventListener("click", backToTop);
-
-        function backToTop() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
-        }
-      </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+      </h5>
+      <!-- <INPUT TYPE="button" class="return" VALUE="&nbsp;&nbsp; Back &nbsp;&nbsp;" onClick="history.go(-1);"> -->
     </div>
-  </body>
+    <br />
+    <div>
+      <input type="button" class="btn btn-primary" style="background-color: #9b2928; margin-left: 2em"
+        value="&nbsp;&nbsp; Back &nbsp;&nbsp;" onClick="history.go(-1);" />
+    </div>
+    <br />
+    <footer>
+      <div class="footer-content">
+        <h6>Department Of Computer Engineering</h6>
+        <h6 style="font-size: 15px">
+          <i class="bi bi-c-circle"></i> 2022-23
+        </h6>
+        <br />
+        <h6>Guided by : Prof. Jyoti Wadmare</h6>
+
+        <h6>
+          Developed by : Dakshita Kolte, Kapil Bhatia, Palak Desai, Kartikeya
+          Dangat
+        </h6>
+      </div>
+    </footer>
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <style>
+      #btn-back-to-top {
+        z-index: 100;
+        border-radius: 50%;
+        color: #ffffff;
+        background-color: #cc3835;
+        height: 50px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+      }
+    </style>
+    <script>
+      //Get the button
+      let mybutton = document.getElementById("btn-back-to-top");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      mybutton.addEventListener("click", backToTop);
+
+      function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  </div>
+</body>
+
 </html>
