@@ -337,7 +337,7 @@ footer
   }
 
   .sidebar{
-    height: 10000px;
+    height: 12000px;
   }
 }
 
@@ -356,7 +356,7 @@ footer
 
 
   .sidebar{
-    height: 6600px;
+    height: 7000px;
   }
 }
 /* Medium devices (landscape tablets, 768px and up) */
@@ -373,7 +373,7 @@ footer
   
 
   .sidebar{
-    height: 6600px;
+    height: 7000px;
   }
 }
 
